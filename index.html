@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Giovanna Gourmet - Cardápio</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+</head>
+
+<body>
+
+    <header>
+        <div class="navbar">
+            <img src="img/logogih.png" alt="Logo Giovanna Gourmet" class="logo">
+
+            <div class="horario">
+                <span id="status">Aberto agora</span>
+                <span id="toggle-horario" class="seta">▼</span>
+                <div id="horario-detalhe" class="detalhe">Seg a Sex: 9h às 18h</div>
+            </div>
+
+            <div class="contatos">
+                <span class="whatsapp"><i class="fa-brands fa-whatsapp"></i> (11) 96864-6651</span>
+                <span class="instagram"><i class="fa-brands fa-instagram"></i> @giov.annagourmet</span>
+            </div>
+
+
+            <!-- Ícone na navbar -->
+            <div class="carrinho">
+                <a href="#" id="open-cart"><i class="fa-solid fa-cart-shopping"></i></a>
+            </div>
+        </div>
+        <nav id="navbar">
+            <button data-target="ovos">Ovos Trufados</button>
+            <button data-target="copos">Copos da Felicidade</button>
+            <button data-target="brigadeiros">Brigadeiros</button>
+            <button data-target="bolo">Bolo Caseiro</button>
+            <button data-target="brownie">Brownie</button>
+            <button data-target="bebidas">Bebidas</button>
+        </nav>
+    </header>
+
+
+
+    <div class="content">
+        <input type="text" class="search" placeholder="Digite para buscar um item" id="search">
+
+        <section id="ovos">
+            <h2>Ovos Trufados</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="img/ovo1.png" alt="Ovo Leite Ninho">
+                    <h3>Ovo Trufado Leite Ninho</h3>
+                    <p>Casca de Chocolate ao Leite ou Branco recheada com Leite Ninho.</p>
+                    <button class="btn pedir">Pedir</button>
+                </div>
+                <div class="card">
+                    <img src="img/ovo1.png" alt="Ovo Brigadeiro">
+                    <h3>Ovo Trufado Brigadeiro</h3>
+                    <p>Casca de Chocolate ao Leite ou Branco recheada com Brigadeiro.</p>
+                    <button class="btn pedir">Pedir</button>
+                </div>
+            </div>
+        </section>
+
+        <section id="copos">
+            <h2>Copos da Felicidade</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="img/ovo1.png" alt="Bolo de Cenoura">
+                    <h3>Copo Ninho Nutella</h3>
+                    <p>Camadas de creme de ninho e Nutella.</p><button class="btn pedir">Pedir</button>
+                </div>
+            </div>
+        </section>
+        <section id="brigadeiros">
+            <h2>Brigadeiros</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="img/ovo1.png" alt="Bolo de Cenoura">
+                    <h3>Brigadeiro Gourmet</h3>
+                    <p>Chocolate belga.</p><button class="btn pedir">Pedir</button>
+                </div>
+            </div>
+        </section>
+        <!-- Seção Bolo Caseiro -->
+        <section id="bolo">
+            <h2>Bolo Caseiro</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="img/ovo1.png" alt="Bolo de Cenoura">
+                    <h3>Bolo de Cenoura</h3>
+                    <p>Com cobertura de chocolate.</p>
+                    <button class="btn pedir">Pedir</button>
+                </div>
+                <div class="card">
+                    <img src="img/ovo1.png" alt="Bolo de Fubá">
+                    <h3>Bolo de Fubá</h3>
+                    <p>Receita tradicional da vovó.</p>
+                    <button class="btn pedir">Pedir</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Brownie -->
+        <section id="brownie">
+            <h2>Brownie</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="img/ovo1.png" alt="Brownie Tradicional">
+                    <h3>Brownie Tradicional</h3>
+                    <p>Chocolate intenso e textura macia.</p>
+                    <button class="btn pedir">Pedir</button>
+                </div>
+                <div class="card">
+                    <img src="img/ovo1.png" alt="Brownie com Nozes">
+                    <h3>Brownie com Nozes</h3>
+                    <p>Brownie crocante com pedaços de nozes.</p>
+                    <button class="btn pedir">Pedir</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Seção Bebidas -->
+        <section id="bebidas">
+            <h2>Bebidas</h2>
+            <div class="grid">
+                <div class="card">
+                    <img src="img/ovo1.png" alt="Suco Natural">
+                    <h3>Suco Natural</h3>
+                    <p>Laranja ou maracujá.</p>
+                    <button class="btn pedir">Pedir</button>
+                </div>
+                <div class="card">
+                    <img src="img/ovo1.png" alt="Refrigerante">
+                    <h3>Refrigerante</h3>
+                    <p>Latinha gelada.</p>
+                    <button class="btn pedir">Pedir</button>
+                </div>
+            </div>
+        </section>
+
+    </div>
+
+
+    <!-- Modal -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span id="close">&times;</span>
+            <h3>Escolha seu produto</h3>
+            <label>Casca:</label>
+            <select id="casca">
+                <option>Chocolate ao Leite</option>
+                <option>Chocolate Branco</option>
+            </select>
+            <label>Tamanho:</label>
+            <select id="tamanho">
+                <option value="35">150g - R$35</option>
+                <option value="50">250g - R$50</option>
+                <option value="65">350g - R$65</option>
+            </select>
+            <button id="confirmar" class="btn">Fazer Pedido</button>
+        </div>
+    </div>
+
+
+
+
+    <!-- Carrinho -->
+    <div id="cart" class="modal">
+        <div class="modal-content">
+            <span id="close-cart">&times;</span>
+            <h3>Seu Pedido</h3>
+            <ul id="cart-items"></ul>
+            <div id="subtotal"></div>
+            <input type="text" id="cep" placeholder="Digite seu CEP" required>
+            <button class="btn" id="calcular-frete">Calcular Frete</button>
+            <p id="frete"></p>
+            <div id="total"></div>
+            <div class="cart-actions">
+                <button class="btn" id="continuar">Continuar Comprando</button>
+                <button class="btn" id="finalizar">Finalizar Pedido</button>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <!-- Formulário Final -->
+    <div id="checkout-form" class="modal">
+        <div class="modal-content">
+            <span id="close-form">&times;</span>
+            <h3>Finalizar Pedido</h3>
+            <div class="form-body">
+                <label>Nome Completo</label>
+                <input type="text" id="nome">
+
+                <label>Telefone</label>
+                <input type="text" id="telefone">
+
+                <label>Endereço</label>
+                <input type="text" id="endereco">
+
+                <label>Forma de Pagamento</label>
+                <select id="pagamento">
+                    <option value="">Selecione...</option>
+                    <option>Dinheiro</option>
+                    <option>Pix</option>
+                </select>
+
+                <label>Observação</label>
+                <textarea id="observacao"></textarea> <!-- não obrigatório -->
+
+                <div id="resumo"></div>
+            </div>
+            <div class="form-actions">
+                <button class="btn" id="voltar-carrinho">Voltar ao Carrinho</button>
+                <button class="btn" id="enviar-whats">Enviar Pedido via WhatsApp</button>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Toast -->
+    <div id="toast"></div>
+
+
+
+    <script src="script.js"></script>
+</body>
+
+</html>
