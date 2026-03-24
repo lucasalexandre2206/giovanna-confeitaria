@@ -1,36 +1,96 @@
 // Navbar ativa conforme rolagem
 const sections = document.querySelectorAll("section");
 const navButtons = document.querySelectorAll("#navbar button");
+const botoes = document.querySelectorAll("nav button");
+const secoes = document.querySelectorAll("section");
+
+window.addEventListener("load", () => {
+  const firstBtn = document.querySelector("#navbar button:first-child");
+  if (firstBtn) {
+    firstBtn.scrollIntoView({behavior:"auto", inline:"start"});
+  }
+});
+
+
+function centralizarCategoria(botao){
+  const nav = document.querySelector("nav");
+
+  const navRect = nav.getBoundingClientRect();
+  const btnRect = botao.getBoundingClientRect();
+
+  const offset = btnRect.left - navRect.left - (navRect.width / 2) + (btnRect.width / 2);
+
+  nav.scrollBy({
+    left: offset,
+    behavior: "smooth"
+  });
+}
 
 
 window.addEventListener("scroll", () => {
-  let current = "";
-  const scrollPos = window.scrollY + 150;
 
-  sections.forEach(sec => {
-    if (scrollPos >= sec.offsetTop) {
-      current = sec.getAttribute("id");
+  let atual = "";
+
+  secoes.forEach(sec => {
+    const top = sec.offsetTop - 150;
+
+    if (window.scrollY >= top) {
+      atual = sec.getAttribute("id");
     }
   });
 
-  if ((window.innerHeight + window.scrollY) >= document.body.offsetHeight) {
-    current = sections[sections.length - 1].getAttribute("id");
+  botoes.forEach(btn => {
+    btn.classList.remove("active");
+
+    if (btn.dataset.target === atual) {
+      btn.classList.add("active");
+
+      // 🔥 AQUI FAZ ROLAR O MENU
+      centralizarCategoria(btn);
+    }
+  });
+
+});
+
+let ultimoAtivo = "";
+
+window.addEventListener("scroll", () => {
+
+  let atual = "";
+
+  secoes.forEach(sec => {
+    const top = sec.offsetTop - 150;
+
+    if (window.scrollY >= top) {
+      atual = sec.id;
+    }
+  });
+
+  if(atual !== ultimoAtivo){
+    ultimoAtivo = atual;
+
+    botoes.forEach(btn => {
+      btn.classList.remove("active");
+
+      if(btn.dataset.target === atual){
+        btn.classList.add("active");
+        centralizarCategoria(btn);
+      }
+    });
   }
 
-  navButtons.forEach(btn => {
-    btn.classList.remove("active");
-    if (btn.dataset.target === current) btn.classList.add("active");
-  });
 });
 
 navButtons.forEach(btn => {
   btn.addEventListener("click", () => {
     const targetId = btn.dataset.target;
     const section = document.getElementById(targetId);
-    const offset = section.offsetTop - 120;
+    const headerHeight = document.querySelector("header").offsetHeight;
+    const offset = section.offsetTop - headerHeight;
     window.scrollTo({ top: offset, behavior: "smooth" });
   });
 });
+
 
 // Toggle horário
 const toggle = document.getElementById("toggle-horario");
@@ -221,6 +281,11 @@ document.getElementById("finalizar").addEventListener("click", () => {
 
   document.getElementById("resumo").innerHTML = resumoHTML;
 });
+
+window.addEventListener("load", () => {
+  document.querySelector("nav button:first-child").scrollIntoView({behavior:"smooth", inline:"start"});
+});
+
 
 
 // Voltar ao carrinho

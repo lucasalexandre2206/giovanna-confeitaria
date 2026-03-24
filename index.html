@@ -3,13 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Giovanna Gourmet - Cardápio</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-
 </head>
 
 <body>
+
+
 
     <header>
         <div class="navbar">
@@ -52,14 +54,18 @@
             <div class="grid">
                 <div class="card">
                     <img src="img/ovo1.png" alt="Ovo Leite Ninho">
-                    <h3>Ovo Trufado Leite Ninho</h3>
-                    <p>Casca de Chocolate ao Leite ou Branco recheada com Leite Ninho.</p>
+                    <div class="card-info">
+                        <h3>Ovo Trufado Leite Ninho</h3>
+                        <p>Casca de Chocolate ao Leite ou Branco recheada com Leite Ninho.</p>
+                    </div>
                     <button class="btn pedir">Pedir</button>
                 </div>
                 <div class="card">
                     <img src="img/ovo1.png" alt="Ovo Brigadeiro">
-                    <h3>Ovo Trufado Brigadeiro</h3>
-                    <p>Casca de Chocolate ao Leite ou Branco recheada com Brigadeiro.</p>
+                    <div class="card-info">
+                        <h3>Ovo Trufado Brigadeiro</h3>
+                        <p>Casca de Chocolate ao Leite ou Branco recheada com Brigadeiro.</p>
+                    </div>
                     <button class="btn pedir">Pedir</button>
                 </div>
             </div>
@@ -70,8 +76,11 @@
             <div class="grid">
                 <div class="card">
                     <img src="img/ovo1.png" alt="Bolo de Cenoura">
-                    <h3>Copo Ninho Nutella</h3>
-                    <p>Camadas de creme de ninho e Nutella.</p><button class="btn pedir">Pedir</button>
+                    <div class="card-info">
+                        <h3>Copo Ninho Nutella</h3>
+                        <p>Camadas de creme de ninho e Nutella.</p>
+                    </div>
+                    <button class="btn pedir">Pedir</button>
                 </div>
             </div>
         </section>
@@ -80,8 +89,11 @@
             <div class="grid">
                 <div class="card">
                     <img src="img/ovo1.png" alt="Bolo de Cenoura">
-                    <h3>Brigadeiro Gourmet</h3>
-                    <p>Chocolate belga.</p><button class="btn pedir">Pedir</button>
+                    <div class="card-info">
+                        <h3>Brigadeiro Gourmet</h3>
+                        <p>Chocolate belga.</p>
+                    </div>
+                    <button class="btn pedir">Pedir</button>
                 </div>
             </div>
         </section>
@@ -91,14 +103,18 @@
             <div class="grid">
                 <div class="card">
                     <img src="img/ovo1.png" alt="Bolo de Cenoura">
-                    <h3>Bolo de Cenoura</h3>
-                    <p>Com cobertura de chocolate.</p>
+                    <div class="card-info">
+                        <h3>Bolo de Cenoura</h3>
+                        <p>Com cobertura de chocolate.</p>
+                    </div>
                     <button class="btn pedir">Pedir</button>
                 </div>
                 <div class="card">
                     <img src="img/ovo1.png" alt="Bolo de Fubá">
-                    <h3>Bolo de Fubá</h3>
-                    <p>Receita tradicional da vovó.</p>
+                    <div class="card-info">
+                        <h3>Bolo de Fubá</h3>
+                        <p>Receita tradicional da vovó.</p>
+                    </div>
                     <button class="btn pedir">Pedir</button>
                 </div>
             </div>
@@ -110,14 +126,18 @@
             <div class="grid">
                 <div class="card">
                     <img src="img/ovo1.png" alt="Brownie Tradicional">
-                    <h3>Brownie Tradicional</h3>
-                    <p>Chocolate intenso e textura macia.</p>
+                    <div class="card-info">
+                        <h3>Brownie Tradicional</h3>
+                        <p>Chocolate intenso e textura macia.</p>
+                    </div>
                     <button class="btn pedir">Pedir</button>
                 </div>
                 <div class="card">
                     <img src="img/ovo1.png" alt="Brownie com Nozes">
-                    <h3>Brownie com Nozes</h3>
-                    <p>Brownie crocante com pedaços de nozes.</p>
+                    <div class="card-info">
+                        <h3>Brownie com Nozes</h3>
+                        <p>Brownie crocante com pedaços de nozes.</p>
+                    </div>
                     <button class="btn pedir">Pedir</button>
                 </div>
             </div>
@@ -129,14 +149,18 @@
             <div class="grid">
                 <div class="card">
                     <img src="img/ovo1.png" alt="Suco Natural">
-                    <h3>Suco Natural</h3>
-                    <p>Laranja ou maracujá.</p>
+                    <div class="card-info">
+                        <h3>Suco Natural</h3>
+                        <p>Laranja ou maracujá.</p>
+                    </div>
                     <button class="btn pedir">Pedir</button>
                 </div>
                 <div class="card">
                     <img src="img/ovo1.png" alt="Refrigerante">
-                    <h3>Refrigerante</h3>
-                    <p>Latinha gelada.</p>
+                    <div class="card-info">
+                        <h3>Refrigerante</h3>
+                        <p>Latinha gelada.</p>
+                    </div>
                     <button class="btn pedir">Pedir</button>
                 </div>
             </div>
@@ -227,6 +251,23 @@
 
     <!-- Toast -->
     <div id="toast"></div>
+
+    <footer class="footer">
+
+        <div class="footer-contatos">
+            <a href="https://wa.me/5511968646651" target="_blank" class="whatsapp">
+                <i class="fa-brands fa-whatsapp"></i>
+            </a>
+
+            <a href="https://instagram.com/giov.annagourmet" target="_blank" class="instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+        </div>
+
+        <p>© 2026 Giovanna Gourmet - Todos os direitos reservados</p>
+
+
+    </footer>
 
 
 
